@@ -14,8 +14,11 @@ class Post {
     fileprivate var _title: String!
     fileprivate var _postDesc: String!
     
+    // get has been added to this getter to see what difference it makes
     var imagePath: String {
-        return _imagePath
+        get {
+            return _imagePath
+        }
     }
     
     var title: String {
