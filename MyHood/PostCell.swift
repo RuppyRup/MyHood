@@ -8,6 +8,8 @@
 
 import UIKit
 
+// This class controls the table view
+
 class PostCell: UITableViewCell {
     
     @IBOutlet weak var postImg: UIImageView!
@@ -18,8 +20,12 @@ class PostCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        postImg.layer.cornerRadius = 15 // make the posted images round
+        
     }
+    
+    // configureCell takes in a Post type and then sets the table element label and text
     
     func configureCell(_ post: Post) {
         titleLbl.text = post.title

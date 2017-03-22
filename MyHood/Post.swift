@@ -8,6 +8,8 @@
 
 import Foundation
 
+// This is the model class of Post
+
 class Post {
     
     fileprivate var _imagePath: String!
@@ -16,9 +18,7 @@ class Post {
     
     // get has been added to this getter to see what difference it makes
     var imagePath: String {
-        get {
             return _imagePath
-        }
     }
     
     var title: String {
