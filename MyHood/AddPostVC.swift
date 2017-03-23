@@ -35,7 +35,14 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         present(imagePicker, animated: true, completion: nil) //calls the image picker view controller
     }
     
-    @IBAction func makePostBtnPressed(_ sender: UIButton) {
+    // if let is used to check if there is anything in the strings. Wont continue if nothing there
+    
+    @IBAction func makePostBtnPressed(_ sender: UIButton) { // when add post is pressed takes info from screen
+        if let title = titleField.text, let desc = descField.text, let img = postImg.image {
+            let post = Post(imagePath: "", title: title, description: desc)
+            DataService.instance.addPost(post: post) // calls the addPost function from Dataservice class
+            dismiss(animated: true, completion: nil) // dismiss screen and return to tableview
+        }
     }
 
     @IBAction func cancelBtnPressed(_ sender: UIButton) {

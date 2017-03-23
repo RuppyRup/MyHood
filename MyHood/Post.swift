@@ -10,7 +10,24 @@ import Foundation
 
 // This is the model class of Post
 
-class Post {
+class Post: NSObject, NSCoding { // class post will inherit from these classes to encode and decode
+    
+    override init() {
+        
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self._imagePath, forKey: "imagePath") // provides key for each property to be encoded
+        aCoder.encode(self._postDesc, forKey: "description")
+        aCoder.encode(self._title, forKey: "title")
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        self.init()
+        self._imagePath = aDecoder.decodeObject(forKey: "imagePath") as? String //decode as type String
+        self._title = aDecoder.decodeObject(forKey: "title") as? String
+        self._postDesc = aDecoder.decodeObject(forKey: "description") as? String
+    }
     
     fileprivate var _imagePath: String!
     fileprivate var _title: String!

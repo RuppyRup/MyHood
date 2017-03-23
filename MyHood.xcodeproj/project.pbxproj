@@ -15,6 +15,7 @@
 		E75B99151E800C6200093319 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75B99141E800C6200093319 /* Post.swift */; };
 		E75B99181E806EAD00093319 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75B99171E806EAD00093319 /* PostCell.swift */; };
 		E75B991D1E81723800093319 /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75B991C1E81723800093319 /* AddPostVC.swift */; };
+		E75B99201E82D08700093319 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75B991F1E82D08700093319 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E75B99141E800C6200093319 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		E75B99171E806EAD00093319 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		E75B991C1E81723800093319 /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
+		E75B991F1E82D08700093319 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		E75B99001E80096E00093319 /* MyHood */ = {
 			isa = PBXGroup;
 			children = (
+				E75B991E1E82CF6600093319 /* Data */,
 				E75B991B1E81637F00093319 /* Controller */,
 				E75B99161E806E7500093319 /* View */,
 				E75B99131E800C1D00093319 /* Model */,
@@ -95,6 +98,14 @@
 				E75B991C1E81723800093319 /* AddPostVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		E75B991E1E82CF6600093319 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E75B991F1E82D08700093319 /* DataService.swift */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +184,7 @@
 				E75B99151E800C6200093319 /* Post.swift in Sources */,
 				E75B99041E80096E00093319 /* ViewController.swift in Sources */,
 				E75B991D1E81723800093319 /* AddPostVC.swift in Sources */,
+				E75B99201E82D08700093319 /* DataService.swift in Sources */,
 				E75B99021E80096E00093319 /* AppDelegate.swift in Sources */,
 				E75B99181E806EAD00093319 /* PostCell.swift in Sources */,
 			);
