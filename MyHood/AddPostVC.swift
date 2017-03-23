@@ -39,7 +39,8 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     
     @IBAction func makePostBtnPressed(_ sender: UIButton) { // when add post is pressed takes info from screen
         if let title = titleField.text, let desc = descField.text, let img = postImg.image {
-            let post = Post(imagePath: "", title: title, description: desc)
+            let imgPath = DataService.instance.saveImageAndCreatePath(img) // saves image and returns path
+            let post = Post(imagePath: imgPath, title: title, description: desc)
             DataService.instance.addPost(post: post) // calls the addPost function from Dataservice class
             dismiss(animated: true, completion: nil) // dismiss screen and return to tableview
         }

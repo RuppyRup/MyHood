@@ -36,12 +36,19 @@ class DataService {
         NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "postsLoaded"), object: nil)) // This will signal whenever posts have been loaded. Need listener in ViewController
     }
     
-    func saveImageAndCreatePath(image: UIImage) {
-        
+    
+    func saveImageAndCreatePath(_ image: UIImage) -> String {
+        let imgData = UIImagePNGRepresentation(image) // turn image into data
+        let imgPath = "image\(Date.timeIntervalSinceReferenceDate).png" // create unique path for image
+        let fullPath = documentsPathForFieldName(imgPath) // return the path for the image
+        try? imgData?.write(to: URL(fileURLWithPath: fullPath), options: [.atomic]) //write image data to disc
+        return imgPath // returns the image path
     }
     
-    func imageForPath(path: String) {
-        
+    func imageForPath(_ path: String) -> UIImage? {
+        let fullPath = documentsPathForFieldName(path) // get the full path
+        let image = UIImage(named: fullPath) // create an image from the path
+        return image // return an image
     }
     
     func addPost(post: Post) {
@@ -49,5 +56,14 @@ class DataService {
         savePosts()  // save the posts
         loadPosts()  // load the posts
     }
+    
+    // passes in filename and returns the path of the file
+
+    func documentsPathForFieldName(_ name: String) -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let fullPath = paths[0] as NSString
+        return fullPath.appendingPathComponent(name)
+    }
+    
     
 }

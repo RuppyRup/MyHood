@@ -25,6 +25,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // Listens for posts. Calls function onPostsLoaded
         
+        DataService.instance.loadPosts() // load the posts when start tableview
+        
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.onPostsLoaded(_:)), name: NSNotification.Name(rawValue: "postsLoaded"), object: nil)
         
         // Creates elements for the array
